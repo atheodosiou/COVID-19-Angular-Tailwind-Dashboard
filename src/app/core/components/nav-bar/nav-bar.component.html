@@ -1,0 +1,43 @@
+<nav class="navbar__wrapper bg-white dark:bg-gray-900 p-5 shadow-sm flex flex-row items-center justify-between sticky top-0 z-10">
+  <div class="navbar__brand flex flex-row space-x-5 items-center">
+    <img src="../../../../assets/virus.png" class="h-8">
+    <a routerLink="/home">
+      <span class="text-xl font-semibold text-gray-900 dark:text-gray-100 hover:text-indigo-500 hover:dark:text-indigo-500">Covid 19 Cases</span>
+    </a>
+    <ul class="navbar__links flex flex-row items-center justify-end space-x-5">
+      <li>
+        <a routerLink="/home" >
+          <span routerLinkActive="active" class="text-gray-700 dark:text-gray-100 hover:text-indigo-500 dark:hover:text-indigo-500 focus:text-indigo-500 dark:focus:text-indigo-500 font-semibold">Home</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/map">
+          <span routerLinkActive="active" class="text-gray-700 dark:text-gray-100 hover:text-indigo-500 dark:hover:text-indigo-500 focus:text-indigo-500 dark:focus:text-indigo-500 font-semibold">Map</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="navbar__actions flex flex-row items-center justify-end space-x-5">
+    <div class="navbar__action">
+      <button type="button" class="rounded-md p-2 bg-secondary dark:bg-grey-1000" (click)="toggleTheme()">
+        <ng-container *ngTemplateOutlet="lightTheme?moon:sun"></ng-container>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<ng-template #moon>
+  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20"
+    class="h-6 w-6 text-2xl cursor-pointer text-yellow-300" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+  </svg>
+</ng-template>
+
+<ng-template #sun>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-yellow-300 text-2xl cursor-pointer text-yellow-300"
+    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+  </svg>
+</ng-template>

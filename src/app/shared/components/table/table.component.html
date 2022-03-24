@@ -1,0 +1,33 @@
+<div class="relative overflow-x-auto border rounded-lg border-gray-100 dark:border-gray-900"
+  [ngClass]="{'table-container':theme==='light','table-container-dark':theme==='dark'}">
+  <table class="w-full text-sm text-left">
+    <thead
+      class="text-xs text-gray-800 uppercase bg-gray-100 dark:bg-gray-900 border-b border-gray-100 dark:border-gray-900 dark:text-gray-100">
+      <tr>
+        <th *ngFor="let col of columns" scope="col" class="px-6 py-3" [ngStyle]="col.style">{{col?.header}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data"
+        class="border-b dark:border-gray-900 odd:bg-white even:bg-gray-100 dark:odd:bg-gray-800 dark:even:bg-gray-900">
+        <td *ngFor="let col of columns" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-gray-300"
+          [ngSwitch]="col.type" [ngStyle]="col.style">
+          <ng-container *ngSwitchCase="'number'">
+            {{row[col.field]|number}}
+          </ng-container>
+          <ng-container *ngSwitchCase="'date'">
+            {{row[col.field]|dateDiff:'min'}}
+          </ng-container>
+          <ng-container *ngSwitchDefault [ngSwitch]="col.field">
+            <ng-container *ngSwitchCase="'countries'">
+              {{row[col.field]?.length}}
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              {{row[col.field]}}
+            </ng-container>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

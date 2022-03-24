@@ -1,0 +1,19 @@
+<div class="py-5">
+  <div class="p-5 bg-white dark:bg-gray-900 shadow-lg mx-5 rounded-xl">
+    <today-stats-widget [all]="all"></today-stats-widget>
+  </div>
+  <all-stats-widget [all]="all"></all-stats-widget>
+  <div class="mx-5 border border-gray-200 dark:border-gray-900 shadow-lg rounded-lg">
+    <table-widget [columns]="continentsCols" [data]="continents"></table-widget>
+  </div>
+  <div class="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5 p-5">
+    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg" style="height: 500px;">
+      <line-chart title="COVID-19 totals for all continents" chartType="bar" [chartData]="continentsConfig"
+        [chartOptions]="continentsChartOptions"></line-chart>
+    </div>
+    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg" style="height: 500px;">
+      <line-chart title="Global COVID-19 vaccine doses administered the last 30 days" chartType="line"
+        [chartOptions]="vaccineDosesChartOptions" [chartData]="vaccineDosesConfig"></line-chart>
+    </div>
+  </div>
+</div>

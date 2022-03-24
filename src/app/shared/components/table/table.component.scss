@@ -1,0 +1,55 @@
+:host {
+
+  .table-container {
+
+    /* width */
+    &::-webkit-scrollbar {
+      height: 7px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: white;
+      border-bottom-left-radius: .25rem;
+      border-bottom-right-radius: .25rem;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: lightgray;
+      border-radius: .25rem;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgb(184, 184, 184);
+    }
+  }
+
+  .table-container-dark {
+
+    /* width */
+    &::-webkit-scrollbar {
+      height: 7px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #111827;
+      border-bottom-left-radius: .25rem;
+      border-bottom-right-radius: .25rem;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #1F2937;
+      border-radius: .25rem;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #232e3d;
+      cursor: pointer !important;
+    }
+  }
+}

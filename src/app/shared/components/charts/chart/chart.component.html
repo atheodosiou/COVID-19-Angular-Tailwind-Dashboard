@@ -1,0 +1,4 @@
+<div class="chart-wrapper space-x-5 p-5">
+  <p *ngIf="title" class="text-lg text-gray-500 dark:text-gray-100 font-semibold">{{title}}</p>
+  <canvas baseChart class="mb-2" [data]="chartData" [options]="chartOptions" [type]="chartType"></canvas>
+</div>
